@@ -55,7 +55,6 @@ class ImageResizer:
         try:
             normalize_path = path.normpath(file_path)
 
-            # Ensure the directory exists
             directory = path.dirname(normalize_path)
             if not path.exists(directory):
                 makedirs(directory, exist_ok=True)
@@ -64,7 +63,3 @@ class ImageResizer:
 
         except Exception as e:
             raise Exception(f"Error creating file: {e}")
-
-# input_path = "green.png"
-# output_path = "Project Classes\\newIcons.png"
-# ImageResizer(input_path, output_path).resize_image(512, 512).show()
